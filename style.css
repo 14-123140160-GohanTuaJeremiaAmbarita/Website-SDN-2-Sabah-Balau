@@ -212,10 +212,6 @@
   font-size: 1.1em;
   color: #555;
 }
-/* Tambahan: ubah sedikit warna border saat hover agar lebih interaktif */
-.hover {
-  border-color: #00bcd4;
-}
 
 /* Maps (DIPERBARUI) */
 .map-section {

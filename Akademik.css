@@ -1,7 +1,7 @@
 /* Import font Poppins dari Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Terapkan font dan warna utama ke seluruh halaman */
+/* ==== FONT & WARNA DASAR (PINDAHAN DARI <style>) ==== */
 body {
   font-family: 'Poppins', sans-serif; /* Gunakan font Poppins */
   color: #2c3e50; /* Warna teks utama */
@@ -10,83 +10,63 @@ body {
   padding: 0;
 }
 
-/* ------------------------ NAVBAR ------------------------ */
-.navbar-custom {
-  background: linear-gradient(135deg, #007bff, #00ffff);
-  color: white;
-}
-
+/* Navbar */
 .navbar-brand {
   display: flex;
   align-items: center;
 }
-
 .navbar-brand strong {
   font-size: 1.2rem;
 }
-
 .navbar-nav {
   align-items: center;
 }
-
 .navbar-custom {
-  background-color: #00bcd4 !important;
+  background: linear-gradient(135deg, #007bff, #00ffff);
+  color: white;
 }
-
 .navbar-custom .navbar-brand,
 .navbar-custom .nav-link {
   color: white !important;
   transition: color 0.3s ease;
 }
-
 .navbar-custom .nav-link:hover {
   color: #b0b0b0 !important;
 }
 
-.navbar-custom .nav-link.active,
-.navbar-custom .nav-link:focus {
-  color: #b0b0b0 !important;
-  background-color: transparent !important;
-}
+/* PERBAIKAN: .hero-section dihapus karena tidak terpakai */
 
-/* ------------------------ HERO SECTION ------------------------ */
-.hero-section {
-  text-align: left;
-  padding-left: 50px;
-  position: relative;
-  background-image: linear-gradient(
-      rgba(179, 179, 179, 0.189),
-      rgba(0, 0, 0, 0.701)
-    ),
-    url('gapura.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 100px 50px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-}
-
-.hero-section h1 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-.hero-section h2 {
-  font-size: 1.8rem;
+/* ==== JUDUL (PINDAHAN DARI <style>) ==== */
+.academic-title {
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: #fcfcfc;
+  color: #2c3e50;
+  /* Tidak ada efek hover pada judul */
 }
 
-.hero-section p {
-  font-size: 1rem;
-  max-width: 700px;
-  text-align: justify;
-  color: #ffffff;
+/* ==== HOVER EFFECT (PINDAHAN DARI <style>) ==== */
+/* Efek hover hanya untuk card, list, dan tombol interaktif */
+.card:hover,
+.list-group-item:hover,
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Nonaktifkan efek hover pada judul, heading, dan teks biasa */
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+p:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Tambahan: ubah sedikit warna border saat hover */
+.card:hover {
+  border-color: #00bcd4 !important; 
 }
 
 /* ------------------------ FOOTER ------------------------ */
@@ -102,14 +82,4 @@ body {
   color: #ffffff;
 }
 
-
-
-/* CATATAN: Aturan .contact-link:hover di bawah ini 
-   sudah ada di dalam blok .custom-footer a:hover di atas. 
-   Anda bisa menghapus blok ini agar tidak duplikat.
-*/
-.contact-link:hover {
-  color: #ffffff !important;
-  transform: translateX(3px);
-  transition: all 0.3s ease;
-}
+/* PERBAIKAN: Aturan duplikat dihapus */
