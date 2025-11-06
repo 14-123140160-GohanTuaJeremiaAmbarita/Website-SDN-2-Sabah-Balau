@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* ======================================== */
+/* Global Font Settings (Kecuali Header/Footer) */
+/* ======================================== */
+.navbar-custom,
+.visi-misi-section-new,
+.stats-section,
+.map-section {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand strong {
+  font-size: 1.2rem;
+}
+.navbar-nav {
+  align-items: center;
+}
+.navbar-custom {
+  background: linear-gradient(135deg, #007bff, #00ffff);
+  color: white;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+.navbar-custom .nav-link:hover {
+  color: #b0b0b0 !important;
+}
+/* ... (kode CSS Anda yang sudah ada) ... */
+
+.navbar-custom .nav-link:hover {
+  color: #b0b0b0 !important;
+}
+
+
+.navbar-custom .btn-login {
+  background-color: #ffffff; /* Latar belakang putih */
+  color: #007bff; /* Teks biru (sesuai warna navbar Anda) */
+  border-radius: 50px; /* Membuat sudut sangat bulat (pill shape) */
+  padding: 6px 24px; /* Atur ukuran tombol */
+  font-weight: 600; /* Teks sedikit tebal */
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.navbar-custom .btn-login:hover {
+  background-color: #e9ecef; /* Warna sedikit abu-abu saat di-hover */
+  color: #0056b3; /* Teks biru lebih gelap */
+  transform: translateY(-2px); /* Efek terangkat kecil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: left;
+  padding-left: 50px;
+  position: relative;
+  background-image: linear-gradient(
+      rgba(179, 179, 179, 0.189),
+      rgba(0, 0, 0, 0.701)
+    ),
+    url('Dokumentasi/gapura.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 50px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.hero-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fcfcfc;
+}
+
+
+/* ======================================== */
+/* Visi Misi (Desain Baru) - DIPERBARUI */
+/* ======================================== */
+.visi-misi-section-new {
+  background-color: #ffffff; /* Latar belakang putih sesuai gambar */
+  overflow-x: hidden;
+  /* Membuat section setinggi layar dan memusatkan konten */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.visi-misi-section-new h3 {
+  color: #2c3e50;
+  /* Judul menggunakan Playfair Display, BUKAN Poppins */
+  font-family: 'Poppins', serif;
+  /* Ukuran font diperkecil */
+  font-size: 2.5rem;
+}
+
+/* Wrapper untuk gambar Visi Misi */
+.vm-image-wrapper {
+  width: 100%;
+  height: 100%; /* Memenuhi tinggi kolom (karena ada align-items-stretch) */
+  cursor: pointer; /* Menunjukkan bisa diklik */
+}
+
+/* Gambar Visi Misi */
+.vm-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mengisi container, cropping jika perlu */
+  border-radius: 12px; /* Ujung tumpul, sama dgn .vm-card */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Bayangan yg sama */
+  transition: transform 0.2s ease-out; /* Transisi untuk efek klik */
+}
+
+/* Efek klik "maju" */
+.vm-image:active {
+  transform: scale(1.03); /* Membesar sedikit saat diklik */
+}
+
+.vm-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  /* Padding diperkecil */
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Ikon diperkecil */
+.vm-icon-wrapper {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vm-icon-wrapper i {
+  font-size: 20px;
+}
+
+.vm-card:nth-child(1) .vm-icon-wrapper {
+  background-color: #e0f7fa;
+  color: #007bff;
+}
+
+/* PERUBAHAN: Warna latar belakang dan ikon Misi diubah */
+.vm-card:nth-child(2) .vm-icon-wrapper {
+  background-color: #e0f7fa; /* Warna biru muda, mirip ikon Visi */
+  color: #007bff; /* Warna biru, mirip ikon Visi */
+}
+
+.vm-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Teks diperkecil */
+.vm-text {
+  font-size: 0.75rem;
+  color: #555;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.vm-list {
+  padding-left: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.vm-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 8px;
+}
+
+.vm-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #198754;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Statistik (Tidak Berubah) */
+.stats-section {
+  padding: 10px 0;
+  text-align: center;
+}
+.stats-box {
+  background: white;
+  border-radius: 15px;
+  padding: 40px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+.stats-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+.stats-box h4 {
+  color: #2c3e50;
+  font-size: 3em;
+  font-weight: bold;
+}
+.stats-box p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Maps (DIPERBARUI) */
+.map-section {
+  /* PERBAIKAN 1: Mengubah '-5' yang tidak valid menjadi '0' */
+  padding-top: 0;
+}
+
+.map-section h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+/* PERBAIKAN 2: Menambahkan kelas ini untuk mengatur ukuran dan posisi peta */
+.map-container {
+  /* Mengatur ukuran sedang (tidak terlalu besar) */
+  max-width: 800px; 
+  height: 450px;
+  
+  /* Ini adalah kunci untuk membuatnya ke tengah */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Estetika agar sesuai desain */
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden; /* Penting agar peta ikut tumpul */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Bayangan seperti kartu Visi Misi */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Footer (Tidak Berubah) */
+.custom-footer {
+  background: linear-gradient(135deg, #007bff, #00ffff);
+  color: white;
+}
+.custom-footer a {
+  color: #e0f7fa;
+  transition: color 0.3s ease;
+}
+.custom-footer a:hover {
+  color: #ffffff;
+}
+.contact-link:hover {
+  color: #ffffff !important;
+  transform: translateX(3px);
+  transition: all 0.3s ease;
+}

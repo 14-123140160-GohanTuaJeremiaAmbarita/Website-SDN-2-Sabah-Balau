@@ -1,0 +1,132 @@
+/* Mengatur font Poppins secara global dan warna latar */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa; /* Latar belakang abu-abu muda */
+}
+
+/* Navbar (Tidak Berubah) */
+.navbar-custom {
+  background: linear-gradient(135deg, #007bff, #00ffff);
+  color: white;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand strong {
+  font-size: 1.2rem;
+}
+.navbar-nav {
+  align-items: center;
+}
+.navbar-custom {
+  background-color: #00bcd4 !important;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+.navbar-custom .nav-link:hover {
+  color: #b0b0b0 !important;
+}
+.navbar-custom .nav-link.active,
+.navbar-custom .nav-link:focus {
+  color: #b0b0b0 !important;
+  background-color: transparent !important;
+}
+
+.navbar-custom .btn-login {
+  background-color: #ffffff; /* Latar belakang putih */
+  color: #007bff; /* Teks biru (sesuai warna navbar Anda) */
+  border-radius: 50px; /* Membuat sudut sangat bulat (pill shape) */
+  padding: 6px 24px; /* Atur ukuran tombol */
+  font-weight: 600; /* Teks sedikit tebal */
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.navbar-custom .btn-login:hover {
+  background-color: #e9ecef; /* Warna sedikit abu-abu saat di-hover */
+  color: #0056b3; /* Teks biru lebih gelap */
+  transform: translateY(-2px); /* Efek terangkat kecil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fasilitas-section {
+  padding: 40px 0; /* Padding atas dan bawah */
+}
+
+/* Judul Halaman Fasilitas */
+.fasilitas-title {
+  font-family: 'Poppins', sans-serif; /* Font Poppins */
+  color: #2c3e50; /* Warna sesuai permintaan */
+  font-weight: 700; /* Bold */
+  font-size: 2.5rem;
+  margin-bottom: 50px; /* Jarak ke galeri */
+  position: relative;
+  display: inline-block;
+}
+
+/* Styling Kartu Fasilitas */
+.facility-card {
+  border: none;
+  border-radius: 15px; /* Sudut tumpul seperti gambar referensi */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Bayangan halus */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+/* Efek hover pada kartu */
+.facility-card:hover {
+  transform: translateY(-5px); /* Kartu sedikit terangkat */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Bayangan lebih jelas */
+}
+
+/* Gambar di dalam kartu */
+.facility-card .card-img-top {
+  border-top-left-radius: 15px; /* Sudut tumpul atas */
+  border-top-right-radius: 15px; /* Sudut tumpul atas */
+  height: 250px; /* Tinggi gambar seragam */
+  object-fit: cover; /* Mencegah gambar penyet */
+}
+
+/* Teks di dalam kartu */
+.facility-card .card-body {
+  padding: 20px;
+  text-align: left; /* Teks rata kiri */
+}
+
+/* Judul Kartu (mis: "Ruang Kelas") */
+.facility-card .card-title {
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50; /* Warna sesuai permintaan */
+  font-weight: 600; /* Sedikit tebal */
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+
+/* Sub-judul Kartu (mis: "SDN 2 Sabah Balau") */
+.facility-card .card-text {
+  color: #6c757d; /* Warna abu-abu muted */
+  font-size: 0.9rem;
+}
+
+
+/* Footer (Tidak Berubah) */
+.custom-footer {
+  background: linear-gradient(135deg, #007bff, #00ffff);
+  color: white;
+}
+.custom-footer a {
+  color: #e0f7fa;
+  transition: color 0.3s ease;
+}
+.custom-footer a:hover {
+  color: #ffffff;
+}
+.contact-link:hover {
+  color: #ffffff !important;
+  transform: translateX(3px);
+  transition: all 0.3s ease;
+}

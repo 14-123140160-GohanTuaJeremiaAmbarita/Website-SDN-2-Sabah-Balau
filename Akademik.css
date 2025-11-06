@@ -1,0 +1,99 @@
+/* Import font Poppins dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ==== FONT & WARNA DASAR (PINDAHAN DARI <style>) ==== */
+body {
+  font-family: 'Poppins', sans-serif; /* Gunakan font Poppins */
+  color: #2c3e50; /* Warna teks utama */
+  background-color: #ffffff; /* Latar belakang putih agar bersih */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand strong {
+  font-size: 1.2rem;
+}
+.navbar-nav {
+  align-items: center;
+}
+.navbar-custom {
+  background: linear-gradient(135deg, #007bff, #00ffff);
+  color: white;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+.navbar-custom .nav-link:hover {
+  color: #b0b0b0 !important;
+}
+
+.navbar-custom .btn-login {
+  background-color: #ffffff; /* Latar belakang putih */
+  color: #007bff; /* Teks biru (sesuai warna navbar Anda) */
+  border-radius: 50px; /* Membuat sudut sangat bulat (pill shape) */
+  padding: 6px 24px; /* Atur ukuran tombol */
+  font-weight: 600; /* Teks sedikit tebal */
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.navbar-custom .btn-login:hover {
+  background-color: #e9ecef; /* Warna sedikit abu-abu saat di-hover */
+  color: #0056b3; /* Teks biru lebih gelap */
+  transform: translateY(-2px); /* Efek terangkat kecil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.academic-title {
+  font-weight: 700;
+  color: #2c3e50;
+  /* Tidak ada efek hover pada judul */
+}
+
+/* ==== HOVER EFFECT (PINDAHAN DARI <style>) ==== */
+/* Efek hover hanya untuk card, list, dan tombol interaktif */
+.card:hover,
+.list-group-item:hover,
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Nonaktifkan efek hover pada judul, heading, dan teks biasa */
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+p:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Tambahan: ubah sedikit warna border saat hover */
+.card:hover {
+  border-color: #00bcd4 !important; 
+}
+
+/* ------------------------ FOOTER ------------------------ */
+.custom-footer {
+  background: linear-gradient(135deg, #007bff, #00ffff);
+  color: white;
+}
+.custom-footer a {
+  color: #e0f7fa;
+  transition: color 0.3s ease;
+}
+.custom-footer a:hover {
+  color: #ffffff;
+}
+
+/* PERBAIKAN: Aturan duplikat dihapus */

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin - Kelola Video Pembelajaran</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Gaya dasar untuk contoh ini */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h1 {
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+      }
+      .form-container,
+      .video-list-container {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      button.delete {
+        background-color: #dc3545;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dashboard Admin - Pengelolaan Video</h1>
+    <button id="logoutBtn">Logout</button>
+    <p id="alertMessage"></p>
+
+    <div class="form-container">
+      <h2>Tambah/Edit Video</h2>
+      <form id="videoForm">
+        <input type="hidden" id="videoId" />
+        <input type="text" id="judul" placeholder="Judul Video" required />
+        <input
+          type="text"
+          id="kelas"
+          placeholder="Kelas (contoh: Kelas 5)"
+          required
+        />
+        <input
+          type="text"
+          id="mapel"
+          placeholder="Mata Pelajaran (contoh: Matematika)"
+          required
+        />
+        <input
+          type="url"
+          id="linkEmbed"
+          placeholder="Link Embed YouTube/Video"
+          required
+        />
+        <textarea id="deskripsi" placeholder="Deskripsi Singkat"></textarea>
+
+        <button type="submit" id="submitBtn">Tambah Video</button>
+        <button
+          type="button"
+          id="cancelEdit"
+          style="display: none; background-color: #ffc107"
+        >
+          Batal Edit
+        </button>
+      </form>
+    </div>
+
+    <div class="video-list-container">
+      <h2>Daftar Video Pembelajaran</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Judul</th>
+            <th>Kelas/Mapel</th>
+            <th>Link Embed</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="videoTableBody"></tbody>
+      </table>
+    </div>
+
+    <script src="admin-dashboard.js"></script>
+  </body>
+</html>
