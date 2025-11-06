@@ -33,6 +33,31 @@
 .navbar-custom .nav-link:hover {
   color: #b0b0b0 !important;
 }
+/* ... (kode CSS Anda yang sudah ada) ... */
+
+.navbar-custom .nav-link:hover {
+  color: #b0b0b0 !important;
+}
+
+/* ================================== */
+/* CSS BARU UNTUK TOMBOL LOGIN */
+/* ================================== */
+.navbar-custom .btn-login {
+  background-color: #ffffff; /* Latar belakang putih */
+  color: #007bff; /* Teks biru (sesuai warna navbar Anda) */
+  border-radius: 50px; /* Membuat sudut sangat bulat (pill shape) */
+  padding: 6px 24px; /* Atur ukuran tombol */
+  font-weight: 600; /* Teks sedikit tebal */
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.navbar-custom .btn-login:hover {
+  background-color: #e9ecef; /* Warna sedikit abu-abu saat di-hover */
+  color: #0056b3; /* Teks biru lebih gelap */
+  transform: translateY(-2px); /* Efek terangkat kecil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
 /* Hero Section */
 .hero-section {

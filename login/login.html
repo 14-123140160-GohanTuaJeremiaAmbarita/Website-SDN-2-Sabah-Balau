@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | SDN 2 Sabah Balau</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="Akademik.css" />
+
+    <style>
+      /* Mengatur body agar form berada di tengah layar */
+      body.login-page-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f8f9fa; /* Latar belakang abu-abu seperti referensi */
+      }
+
+      /* Kotak putih yang berisi form */
+      .login-container {
+        background-color: #ffffff;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 450px;
+        width: 100%;
+      }
+
+      /* Tombol login utama */
+      .login-container .btn-primary {
+        background-color: #007bff; /* Biru primer (sesuai referensi) */
+        border: none;
+        padding: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .login-container .btn-primary:hover {
+        background-color: #0056b3; /* Biru lebih gelap saat hover */
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Link "Lupa password" dan "Kembali" */
+      .login-container .form-text,
+      .login-container .back-link {
+        font-size: 0.9rem;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body class="login-page-wrapper">
+    
+    <div class="login-container">
+      
+      <div class="text-center mb-4">
+        <img
+          src="../Dokumentasi/logo.png"
+          alt="Logo SDN 2 Sabah Balau"
+          style="width: 80px"
+        />
+        <h2 class="mt-3 fw-bold">Login Admin</h2>
+        <p class="text-muted">Gunakan akun admin untuk masuk</p>
+      </div>
+
+      <form>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+            required
+          />
+          <label for="email"> Username</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <label for="password">Password</label>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="rememberMe"
+            />
+            <label class="form-check-label" for="rememberMe"> Ingat saya </label>
+          </div>
+          <a href="#" class="form-text">Lupa password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 btn-lg">
+          Log In
+        </button>
+      </form>
+      
+
+      <div class="text-center mt-4">
+        <a href="index.html" class="back-link">
+          <i class="bi bi-arrow-left"></i> Kembali ke Beranda
+        </a>
+      </div>
+    </div>
+
+    <div id="error-message" class="alert alert-danger mt-3" style="display: none;"></div>
+
+    <script>
+      // 1. Tangkap form login saat disubmit
+      const loginForm = document.querySelector('form');
+      const errorMessage = document.getElementById('error-message');
+
+      loginForm.addEventListener('submit', async (event) => {
+        // 2. Hentikan form agar tidak me-reload halaman
+        event.preventDefault();
+
+        // 3. Ambil data dari input
+        const username = event.target.email.value;
+        const password = event.target.password.value;
+
+        try {
+          // 4. Kirim data ke backend API (/api/login.js)
+          const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password }),
+          });
+
+          // 5. Ubah balasan server dari teks menjadi JSON
+          const data = await response.json();
+
+          // 6. Cek balasan dari server
+          if (data.success) {
+            // JIKA SUKSES:
+            alert('Login berhasil! Mengarahkan ke dashboard...');
+            // Arahkan ke halaman admin rahasia
+            window.location.href = '/admin.html'; 
+          } else {
+            // JIKA GAGAL:
+            errorMessage.textContent = data.message;
+            errorMessage.style.display = 'block';
+          }
+        } catch (error) {
+          // Jika server tidak terjangkau
+          errorMessage.textContent = 'Tidak dapat terhubung ke server. Coba lagi.';
+          errorMessage.style.display = 'block';
+        }
+      });
+    </script>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
