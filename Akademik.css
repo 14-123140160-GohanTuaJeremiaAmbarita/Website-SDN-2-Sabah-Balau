@@ -34,6 +34,7 @@ body {
   color: #b0b0b0 !important;
 }
 
+<<<<<<< HEAD
 .navbar-custom .btn-login {
   background-color: #ffffff; /* Latar belakang putih */
   color: #007bff; /* Teks biru (sesuai warna navbar Anda) */
@@ -51,6 +52,11 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+=======
+/* PERBAIKAN: .hero-section dihapus karena tidak terpakai */
+
+/* ==== JUDUL (PINDAHAN DARI <style>) ==== */
+>>>>>>> e301fd1327d72f319771e76c60af8e887e7ac678
 .academic-title {
   font-weight: 700;
   color: #2c3e50;

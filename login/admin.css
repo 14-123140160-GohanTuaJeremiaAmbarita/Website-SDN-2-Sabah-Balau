@@ -1,0 +1,120 @@
+/* Import font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* ==== FONT & WARNA DASAR (Sesuai Akademik.css) ==== */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50;
+  background-color: #f8f9fa; /* Latar belakang abu-abu muda */
+  margin: 0;
+  padding: 0;
+}
+
+/* ==== STRUKTUR DASHBOARD (Dari Referensi) ==== */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- Sidebar Styling (DIPERBARUI) --- */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  /* PERUBAHAN: Mengganti background gelap dengan gradient navbar Anda */
+  background: linear-gradient(135deg, #007bff, #00ffff);
+  color: white;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white; /* Teks brand tetap putih */
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav .nav-link {
+  /* PERUBAHAN: Teks link menjadi putih transparan agar kontras */
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar-nav .nav-link:hover {
+  /* PERUBAHAN: Latar hover menjadi putih transparan */
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.sidebar-nav .nav-link.active {
+  /* PERUBAHAN: Latar aktif menjadi putih (kebalikan) */
+  background-color: #ffffff;
+  color: #2c3e50; /* Teks menjadi biru */
+  font-weight: 600;
+}
+
+.sidebar-nav .nav-link.logout {
+  /* PERUBAHAN: Warna logout diubah agar terlihat di background biru */
+  color: #f8d7da; /* Merah muda/pucat */
+}
+.sidebar-nav .nav-link.logout:hover {
+  background-color: #dc3545; /* Latar hover tetap merah */
+  color: white;
+}
+
+/* --- Main Content Styling --- */
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* PERUBAHAN: Judul H1 disamakan dengan warna biru tema */
+.main-content h1 {
+  color: #2c3e50;
+}
+
+.content-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ==== KONSISTENSI GAYA (Sesuai Akademik.css) ==== */
+.academic-title {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Efek hover untuk kartu dan list */
+.card:hover,
+.list-group-item:hover,
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Nonaktifkan hover pada teks biasa */
+h1:hover, h2:hover, h3:hover, h4:hover, p:hover {
+  transform: none;
+  box-shadow: none;
+}

@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // === Tampilkan tampilan awal (pemilihan kelas) ===
     showView('pilih-kelas');
 });
+<<<<<<< HEAD
 
 async function getMaterials() {
   try {
@@ -170,3 +171,5 @@ async function getMaterials() {
 }
 
 getMaterials();
+=======
+>>>>>>> e301fd1327d72f319771e76c60af8e887e7ac678
