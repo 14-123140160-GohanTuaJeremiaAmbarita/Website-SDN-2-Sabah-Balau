@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // login/login.js
 
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
@@ -37,7 +36,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         messageEl.textContent = 'Terjadi kesalahan pada server. Coba lagi.';
     }
 });
-=======
+
 // Ini adalah kode backend (Serverless Function)
 // Kode ini berjalan di server Vercel, BUKAN di browser pengguna
 
@@ -71,4 +70,4 @@ export default function handler(request, response) {
     return response.status(500).json({ success: false, message: 'Terjadi kesalahan server' });
   }
 }
->>>>>>> e301fd1327d72f319771e76c60af8e887e7ac678
+
