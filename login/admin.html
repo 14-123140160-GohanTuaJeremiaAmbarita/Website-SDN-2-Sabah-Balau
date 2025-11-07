@@ -1,14 +1,287 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <title>Admin Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-  <div class="container mt-5">
-    <h1>Selamat Datang, Admin!</h1>
-    <p>Anda telah berhasil login.</p>
-    <a href="index.html" class="btn btn-primary">Kembali ke Beranda</a>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin | SDN 2 Sabah Balau</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      
+      <aside class="sidebar">
+        <a class="sidebar-brand" href="../index.html">
+          <img
+            src="../Dokumentasi/logo.png"
+            alt="Logo Sekolah"
+            width="40"
+            height="32"
+            class="me-2"
+          />
+          <strong>Admin Panel</strong>
+        </a>
+
+        <ul class="sidebar-nav">
+          <li class="nav-item">
+            <a href="admin.html" class="nav-link active">
+              <i class="bi bi-grid-fill me-2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../Akademik.html" class="nav-link">
+              <i class="bi bi-box-arrow-up-right me-2"></i> Lihat Situs
+            </a>
+          </li>
+          <li class="nav-item mt-auto">
+            <a href="../index.html" class="nav-link logout">
+              <i class="bi bi-box-arrow-left me-2"></i> Logout
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <h1 class="display-5 fw-bold">Dashboard Admin</h1>
+        <p class="text-muted">Selamat datang, admin. Kelola konten website dari sini.</p>
+
+        <hr class="my-4" />
+
+        <div class="content-card">
+          <h2 class="academic-title mb-4">Kelola Materi Pembelajaran</h2>
+
+          <section id="pilih-kelas">
+            <h5 class="mb-3">Langkah 1: Pilih Kelas</h5>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="card card-kelas text-center p-4" data-kelas="5">
+                  <i class="bi bi-person-badge-fill display-4 mb-3"></i>
+                  <h3 class="card-title">Kelas 5</h3>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="card card-kelas text-center p-4" data-kelas="6">
+                  <i class="bi bi-mortarboard-fill display-4 mb-3"></i>
+                  <h3 class="card-title">Kelas 6</h3>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="pilih-pelajaran" style="display: none">
+            <h5 class="mb-3">Langkah 2: Pilih Mata Pelajaran</h5>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="card card-pelajaran p-3" data-pelajaran="Matematika">
+                  <h4 class="card-title">
+                    <i class="bi bi-calculator me-2"></i> Matematika (MTK)
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="card card-pelajaran p-3" data-pelajaran="Bahasa Inggris">
+                  <h4 class="card-title">
+                    <i class="bi bi-globe me-2"></i> Bahasa Inggris
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-sm btn-outline-secondary mt-3" onclick="showView('pilih-kelas')">
+              &laquo; Kembali
+            </button>
+          </section>
+
+          <section id="pilih-bab" style="display: none">
+            <h5 class="mb-3">Langkah 3: Pilih Bab yang Ingin Diubah</h5>
+            <div class="row">
+              <div class="col-lg-8">
+                <div id="bab-list" class="list-group">
+                  </div>
+              </div>
+            </div>
+            <button class="btn btn-sm btn-outline-secondary mt-3" onclick="showView('pilih-pelajaran')">
+              &laquo; Kembali
+            </button>
+          </section>
+
+          <section id="form-materi" style="display: none">
+            <h5 class="mb-3">Langkah 4: Masukkan Link YouTube Baru</h5>
+            <h6 class="text-muted" id="judul-bab-edit"></h6>
+            
+            <form id="form-update" class="mt-3">
+              <div class="mb-3">
+                <label for="youtube-link" class="form-label">Link Video YouTube:</label>
+                <input type="url" class="form-control" id="youtube-link" placeholder="https://www.youtube.com/embed/..." required>
+                <div class="form-text">Pastikan link menggunakan format "embed".</div>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save me-2"></i> Simpan Perubahan
+              </button>
+              <button type="button" class="btn btn-outline-secondary ms-2" onclick="showView('pilih-bab')">
+                &laquo; Kembali
+              </button>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      // 1. DATA MATERI (Sama seperti di akademik.js lama Anda)
+      // Di aplikasi nyata, data ini harus diambil dari database
+      const dataAkademik = {
+        '5': {
+          'Matematika': {
+            'Bab 1': { nama: 'Bilangan Bulat dan Bilangan Desimal', youtube: '' },
+            'Bab 2': { nama: 'Pengukuran per Kuantitas Unit', youtube: '' },
+            'Bab 3': { nama: 'Perkalian Bilangan Desimal', youtube: '' },
+            'Bab 4': { nama: 'Kekongruenan dan Sudut Bangun Datar', youtube: '' },
+            'Bab 5': { nama: 'Pembagian Bilangan Desimal', youtube: '' },
+            'Bab 6': { nama: 'Volume', youtube: '' },
+            'Bab 7': { nama: 'Kelipatan dan Faktor', youtube: '' },
+            'Bab 8': { nama: 'Pecahan', youtube: '' }
+
+          },
+          'Bahasa Inggris': {
+            'Bab 1': { nama: 'The Curry is Spicy', youtube: '' },
+            'Bab 2': { nama: 'I Drink a Glass of Milk', youtube: '' },
+            'Bab 3': { nama: 'How Much Do the Apples Cost?', youtube: '' },
+            'Bab 4': { nama: 'I Have Stomachache', youtube: '' },
+            'Bab 5': { nama: 'What a Nice Shirt!', youtube: '' },
+            'Bab 6': { nama: 'She Listens to Music with Her Ears', youtube: '' },
+            'Bab 7': { nama: 'The Tiger is Big, but the Cat is Small', youtube: '' },
+            'Bab 8': { nama: 'The Rabit is Smaller than the Goat', youtube: '' },
+            'Bab 9': { nama: 'The Giraffe is the Tallest Animal on Earth', youtube: '' },
+            'Bab 10': { nama: 'Indonesia Independence Day is on August 17th', youtube: '' }
+          }
+        },
+        '6': {
+          'Matematika': {
+            'Bab 1': { nama: 'Simetri', youtube: '' },
+            'Bab 2': { nama: 'Simbol dan Kalimat Matematika', youtube: '' },
+            'Bab 3': { nama: 'Perkalian Pecahan', youtube: '' },
+            'Bab 4': { nama: 'Pembagian Pecahan', youtube: '' },
+            'Bab 5': { nama: 'Kelipatan dan Perbandingan', youtube: '' },
+            'Bab 6': { nama: ' Pembagian Pecahan', youtube: '' },
+            'Bab 7': { nama: 'Menghitung Luas Berbagai Bangun Datar', youtube: '' },
+            'Bab 8': { nama: 'Urutan dan Kombinasi', youtube: '' },
+            'Bab 9': { nama: 'Kecepatan', youtube: '' },
+            'Bab 10': { nama: 'Volume', youtube: '' }
+          },
+          'Bahasa Inggris':{
+            'Bab 1': { nama: 'I Ate Hamburger Yesterday', youtube: '' },
+            'Bab 2': { nama: 'I Went to the Zoo Last Week', youtube: '' },
+            'Bab 3': { nama: 'I was in Lombok Last Week', youtube: '' },
+            'Bab 4': { nama: 'I was Happy Yesterday', youtube: '' },
+            'Bab 5': { nama: 'Where did You Go Yesterday?', youtube: '' },
+            'Bab 6': { nama: 'My Holiday Experience', youtube: '' },
+            'Bab 7': { nama: 'I Will Go to Bandung', youtube: '' },
+            'Bab 8': { nama: 'My Mother will Bake a Cake Tomorrow', youtube: '' },
+            'Bab 9': { nama: 'Made Wants to be a Pilot', youtube: '' },
+            'Bab 10': { nama: 'I Want to be a Teacher', youtube: '' }
+          }
+        }
+      };
+
+      // 2. Variabel Status
+      let currentKelas = null;
+      let currentPelajaran = null;
+      let currentBab = null;
+
+      // 3. Fungsi Navigasi (Sama seperti akademik.js)
+      function showView(viewId) {
+        document.getElementById('pilih-kelas').style.display = 'none';
+        document.getElementById('pilih-pelajaran').style.display = 'none';
+        document.getElementById('pilih-bab').style.display = 'none';
+        document.getElementById('form-materi').style.display = 'none';
+        document.getElementById(viewId).style.display = 'block';
+      }
+
+      // 4. Event Listener (Aksi Klik)
+
+      // Klik Kelas
+      document.querySelectorAll('.card-kelas').forEach(card => {
+        card.addEventListener('click', () => {
+          currentKelas = card.dataset.kelas;
+          showView('pilih-pelajaran');
+        });
+      });
+
+      // Klik Pelajaran
+      document.querySelectorAll('.card-pelajaran').forEach(card => {
+        card.addEventListener('click', () => {
+          currentPelajaran = card.dataset.pelajaran;
+          const babList = document.getElementById('bab-list');
+          babList.innerHTML = ''; // Kosongkan list
+          
+          // Cek apakah data ada
+          if (dataAkademik[currentKelas] && dataAkademik[currentKelas][currentPelajaran]) {
+            const babData = dataAkademik[currentKelas][currentPelajaran];
+            Object.keys(babData).forEach(babKey => {
+              const bab = babData[babKey];
+              const link = document.createElement('a');
+              link.href = '#';
+              link.className = 'list-group-item list-group-item-action';
+              link.dataset.bab = babKey;
+              link.innerHTML = `<strong>${babKey}.</strong> ${bab.nama}`;
+              link.addEventListener('click', () => handleBabClick(babKey, bab));
+              babList.appendChild(link);
+            });
+          } else {
+            babList.innerHTML = '<div class="alert alert-warning">Belum ada data bab untuk pelajaran ini.</div>';
+          }
+          showView('pilih-bab');
+        });
+      });
+
+      // Klik Bab
+      function handleBabClick(babKey, babData) {
+        currentBab = babKey;
+        // Set judul form
+        document.getElementById('judul-bab-edit').textContent = `Materi: ${babKey} - ${babData.nama}`;
+        // Set link youtube yang ada saat ini
+        document.getElementById('youtube-link').value = babData.youtube;
+        showView('form-materi');
+      }
+
+      // 5. Aksi Simpan Form
+      document.getElementById('form-update').addEventListener('submit', (e) => {
+        e.preventDefault(); // Mencegah reload halaman
+        
+        const newLink = document.getElementById('youtube-link').value;
+        
+        // Memperbarui data di object JavaScript (simulasi)
+        dataAkademik[currentKelas][currentPelajaran][currentBab].youtube = newLink;
+
+        // **CATATAN PROFESIONAL:**
+        // Di aplikasi nyata, di sinilah Anda akan 'fetch' ke API backend 
+        // untuk menyimpan data ini ke database (Lihat saran di bawah).
+        
+        alert(`Perubahan tersimpan!\nBab "${currentBab}" sekarang menggunakan link:\n${newLink}`);
+        
+        // Kembali ke daftar bab
+        showView('pilih-bab');
+      });
+
+      // Inisialisasi: Tampilkan 'pilih-kelas' saat halaman dimuat
+      showView('pilih-kelas');
+
+    </script>
+  </body>
 </html>
